@@ -37,7 +37,10 @@ namespace Esfa.Fechoices.Api
                 //c.OperationFilter<DescriptionOperationFilter>();
             });
 
+            services.Configure<DatabaseSettings>(Configuration);
+
             services.AddIfMissing<IValuesRepository, ValuesRepository>();
+            services.AddIfMissing<ILearnerSatisfactionRepository, LearnerSatisfactionRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
