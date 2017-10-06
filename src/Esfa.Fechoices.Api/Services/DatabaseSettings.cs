@@ -6,6 +6,6 @@ namespace Esfa.Fechoices.Api.Services
 {
     public class DatabaseSettings
     {
-        public string FeChoicesConnectionString => Environment.GetEnvironmentVariable("DAS_ACHIEVEMENTRATEDATABASECONNECTIONSTRING", EnvironmentVariableTarget.User);
+        public string FeChoicesConnectionString => Environment.GetEnvironmentVariable("SQLAZURECONNSTR_FEChoices", EnvironmentVariableTarget.User);
     }
 }
