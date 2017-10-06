@@ -6,6 +6,9 @@ namespace Esfa.Fechoices.Api.Services
 {
     public class DatabaseSettings
     {
-        public string FeChoicesConnectionString => Environment.GetEnvironmentVariable("SQLAZURECONNSTR_FEChoices", EnvironmentVariableTarget.User);
+        private const string sqlazureconnstrFechoices = "SQLAZURECONNSTR_FEChoices";
+
+        public string FeChoicesConnectionString => Environment.GetEnvironmentVariable(sqlazureconnstrFechoices) ??
+                                                   Environment.GetEnvironmentVariable(sqlazureconnstrFechoices, EnvironmentVariableTarget.User);
     }
 }
