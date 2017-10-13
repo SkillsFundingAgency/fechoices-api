@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.3
+VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Esfa.Fechoices.Api", "Esfa.Fechoices.Api\Esfa.Fechoices.Api.csproj", "{2B884E20-AF83-425A-AACB-9F82D56A738F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Esfa.Fechoices.Api", "Esfa.Fechoices.Api\Esfa.Fechoices.Api.csproj", "{2B884E20-AF83-425A-AACB-9F82D56A738F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "integration-testing", "integration-testing", "{8A0E08BB-0420-4A2E-A911-79E8F83724DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Esfa.Fechoices.Api.Netcore.IntegrationTests", "Esfa.Fechoices.Api.Netcore.IntegrationTests\Esfa.Fechoices.Api.Netcore.IntegrationTests.csproj", "{47D0FF50-EF95-495C-B47F-1CE870014830}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +19,16 @@ Global
 		{2B884E20-AF83-425A-AACB-9F82D56A738F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B884E20-AF83-425A-AACB-9F82D56A738F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B884E20-AF83-425A-AACB-9F82D56A738F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47D0FF50-EF95-495C-B47F-1CE870014830}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47D0FF50-EF95-495C-B47F-1CE870014830}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47D0FF50-EF95-495C-B47F-1CE870014830}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47D0FF50-EF95-495C-B47F-1CE870014830}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{47D0FF50-EF95-495C-B47F-1CE870014830} = {8A0E08BB-0420-4A2E-A911-79E8F83724DB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {54C17DA0-3C05-4E8E-9129-BEF4AB53D428}
