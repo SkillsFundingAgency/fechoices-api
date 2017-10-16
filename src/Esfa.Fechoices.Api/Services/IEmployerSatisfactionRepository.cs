@@ -3,8 +3,8 @@ using Esfa.Fechoices.Api.Models;
 
 namespace Esfa.Fechoices.Api.Services
 {
-    public interface ILearnerSatisfactionRepository
+    public interface IEmployerSatisfactionRepository
     {
-        Task<LearnerSatisfaction> Get(int ukprn);
+        Task<EmployerSatisfaction> Get(int ukprn);
     }
 }

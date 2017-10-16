@@ -1,5 +1,4 @@
-﻿using System.Data.SqlClient;
-using System.Linq;
+using System.Data.SqlClient;
 using System.Threading.Tasks;
 using Dapper;
 using Esfa.Fechoices.Api.Models;
@@ -7,18 +6,18 @@ using Microsoft.Extensions.Options;
 
 namespace Esfa.Fechoices.Api.Services
 {
-    public class LearnerSatisfactionRepository : ILearnerSatisfactionRepository
+    public class EmployerSatisfactionRepository : IEmployerSatisfactionRepository
     {
-        private const string LearnerSatisfactionRatesTableName = "[dbo].[LearnerSatisf_2015_2016]";
+        private const string EmployerSatisfactionRatesTableName = "[dbo].[EmployerSatisf_2015_2016]";
 
         private readonly IOptions<DatabaseSettings> _settings;
 
-        public LearnerSatisfactionRepository(IOptions<DatabaseSettings> settings)
+        public EmployerSatisfactionRepository(IOptions<DatabaseSettings> settings)
         {
             _settings = settings;
         }
 
-        public Task<LearnerSatisfaction> Get(int ukprn)
+        public Task<EmployerSatisfaction> Get(int ukprn)
         {
             using (var connection = new SqlConnection(_settings.Value.FeChoicesConnectionString))
             {
@@ -26,12 +25,12 @@ namespace Esfa.Fechoices.Api.Services
                 var query = $@"
                     SELECT  [UKPRN]
                     ,       [Final_Score] AS FinalScore
-                    ,       [Learners] AS TotalCount
+                    ,       [Employers] AS TotalCount
                     ,       [Responses] AS ResponseCount
-                    FROM    {LearnerSatisfactionRatesTableName}
-                    WHERE   UKPRN = @ukprn";
+                    FROM    {EmployerSatisfactionRatesTableName}
+                    ";
 
-                return connection.QueryFirstAsync<LearnerSatisfaction>(query, new {ukprn});
+                return connection.QueryFirstAsync<EmployerSatisfaction>(query, new { ukprn });
             }
         }
     }
